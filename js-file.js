@@ -294,38 +294,67 @@ function toFloat() { // adding a dot
 // responding to pressing keys
 document.addEventListener('keydown', function(event) { 
    if (event.key == "0" || event.key == "1" || event.key == "2" || event.key == "3" || event.key == "4" || event.key == "5" || event.key == "6" || event.key == "7" || event.key == "8" || event.key == "9" ) {
-       numberInput(event.key);
+        numberInput(event.key); 
+        if (event.key == "0") interact("zero"); // initiating a pressing effect for keyboard input
+        else if (event.key == "0") interact("zero");
+        else if (event.key == "1") interact("one");
+        else if (event.key == "2") interact("two");
+        else if (event.key == "3") interact("three");
+        else if (event.key == "4") interact("four");
+        else if (event.key == "5") interact("five");
+        else if (event.key == "6") interact("six");
+        else if (event.key == "7") interact("seven");
+        else if (event.key == "8") interact("eight");
+        else if (event.key == "9") interact("nine");
    }
    else if (event.key == "*" || event.key == "/" || event.key == "+" || event.key == "-" || event.key == "%") {
-       operatorInput(event.key);
+        operatorInput(event.key);
+        if (event.key == "*") interact("times"); // initiating a pressing effect for keyboard input
+        else if (event.key == "/") interact("division");
+        else if (event.key == "%") interact("module");
+        else if (event.key == "+") interact("plus");
+        else if (event.key == "-") interact("minus");
    }
-   else if (event.key == "Backspace") {
-       erase();
+   else if (event.key == "Backspace") {        
+        erase();
+        interact("back"); // initiating a pressing effect for keyboard input
    }
    else if (event.key == ".") {
-       toFloat();
+        toFloat();
+        interact("dot"); // initiating a pressing effect for keyboard input
    }
    else if (event.key == "=" ) {
-       calculate();
+        calculate();
+        interact("equals"); // initiating a pressing effect for keyboard input
    }
 });
 
-// creating a button pressing effect after each click by changing border-bottom size and shadow opacity
 buttons.forEach((button) => {
-   button.addEventListener('click', () => {
-       document.getElementById(button.id).style.borderBottomWidth = '3px';
-       document.getElementById(button.id).style.boxShadow = "0px 3px 5px rgba(41, 41, 41, 0)";
-       setTimeout(function(){
-           document.getElementById(button.id).style.borderBottomWidth = '3.5px';
-           document.getElementById(button.id).style.boxShadow = "0px 3.5px 5px rgba(41, 41, 41, 0.3)";
-       }, 50);
-       setTimeout(function(){
-           document.getElementById(button.id).style.borderBottomWidth = '5px';
-           document.getElementById(button.id).style.boxShadow = "0px 5px 5px rgba(41, 41, 41, 0.6)";
-       }, 100);
-       setTimeout(function(){
-           document.getElementById(button.id).style.borderBottomWidth = '6.5px';
-           document.getElementById(button.id).style.boxShadow = "0px 6px 5px rgba(41, 41, 41, 1)";
-       }, 150);
-   });
+    button.addEventListener('click', () => {
+        interact(button.id);
+    });
 });
+
+// creating a button pressing effect after each click by changing border-bottom size and shadow opacity
+function interact(id) {
+    var audio = new Audio('audio/audio_file1.mp3');
+    audio.play(); // playing the audio
+    document.getElementById(id).style.borderBottomWidth = '3px';
+    document.getElementById(id).style.borderTopWidth = '3px';
+    document.getElementById(id).style.boxShadow = "0px 3px 5px rgba(41, 41, 41, 0)";
+    setTimeout(function(){
+        document.getElementById(id).style.borderTopWidth = '2.5px';
+        document.getElementById(id).style.borderBottomWidth = '3.5px';
+        document.getElementById(id).style.boxShadow = "0px 3.5px 5px rgba(41, 41, 41, 0.3)";
+    }, 50);
+    setTimeout(function(){
+        document.getElementById(id).style.borderTopWidth = '2px';
+        document.getElementById(id).style.borderBottomWidth = '5px';
+        document.getElementById(id).style.boxShadow = "0px 5px 5px rgba(41, 41, 41, 0.6)";
+    }, 100);
+    setTimeout(function(){
+       document.getElementById(id).style.borderBottomWidth = '6.5px';
+       document.getElementById(id).style.boxShadow = "0px 6px 5px rgba(41, 41, 41, 1)";
+       document.getElementById(id).style.borderTopWidth = '1px';
+    }, 150);
+}

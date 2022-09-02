@@ -11,7 +11,8 @@
         padding: 0;
         white-space: nowrap;
         user-select: none;
-        
+        /* scrollbar-color: #6969dd #e0e0e0;
+        scrollbar-width: thin; */
     }
     body {        
         display: flex;
@@ -19,12 +20,25 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        min-height: 650px;        
+        min-height: 600px;        
         background: radial-gradient(
             circle,
             #99D9EA 0%,
             #5488D1 80%
         );        
+        padding-top: 33px;
+        /* overflow: hidden; */
+    }
+    body::-webkit-scrollbar {
+        width: 4px;
+    }
+     
+    body::-webkit-scrollbar-track {
+        background-color: #e4e4e4;
+    }
+     
+    body::-webkit-scrollbar-thumb {
+        background-color: #d4aa70;
     }
     #calculator {
         width: 700px;
@@ -77,6 +91,7 @@
         align-items:flex-end;
         flex-direction: column;
         border-top-color: #303030;
+        overflow: hidden;
     }
     #screen > p {
         padding-right: 2%;
@@ -150,14 +165,20 @@
     #footer > p{
         margin-top: 10px;
     }
+    a {
+        font-size: 1.8rem;
+        position: absolute;
+        margin-right: -475px;
+    }
     .fa-github {
         color: var(--primary-light);
         margin-top: 16px;
-        margin-left: 14px;
-        transition: ease-in-out 0.5s;
+        transition: ease-in-out 0.4s;
     }
     .fa-github:hover {
+        margin-top: 10px;
         transform: rotate(360deg);
+        font-size: 2.2rem;
     }
     @media screen and (max-width: 2559px) {        
         #screen {
@@ -175,7 +196,6 @@
             height: 80%;
             letter-spacing: -1px;
         }
-
         #calculator {
             width: 350px;
             height: 565px;
@@ -200,9 +220,20 @@
             border-radius: 0% 0% 40% 40%;            
             font-size: 1.4rem;
         }
-        .fa-github {            
-            margin-top: 12px;
-            margin-left: 10px;
+        a {
+            font-size: 1.8rem;
+            position: absolute;
+            margin-right: -357px;
+        }
+        .fa-github {
+            color: var(--primary-light);
+            margin-top: 10px;
+            transition: ease-in-out 0.4s;
+        }
+        .fa-github:hover {
+            margin-top: 6px;
+            transform: rotate(360deg);
+            font-size: 2.2rem;
         }
     }
     
