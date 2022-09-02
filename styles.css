@@ -11,23 +11,19 @@
         padding: 0;
         white-space: nowrap;
         user-select: none;
-        /* scrollbar-color: #6969dd #e0e0e0;
-        scrollbar-width: thin; */
     }
     body {        
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        height: 100vh;
         min-height: 600px;        
         background: radial-gradient(
             circle,
             #99D9EA 0%,
             #5488D1 80%
         );        
-        padding-top: 33px;
-        /* overflow: hidden; */
+        padding-top: 200px;
+        padding-bottom: 30px;        
     }
     body::-webkit-scrollbar {
         width: 4px;
@@ -58,7 +54,7 @@
         width: 750px;
         height: 1170px;
         top: auto;
-        margin-top: 28px;
+        /* margin-top: 8000px; */
         border-radius: 100px 100px 90px 90px;
         background:
             linear-gradient(
@@ -149,38 +145,43 @@
         grid-column: 4/5;
         grid-row:  4/6;
     }
-    #footer {
-        display: flex;
-        justify-content: center;
-        width: 100%;
+    .footer {
         background-color: var(--button-color);
         position: absolute;
+        top: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -10px;
+        gap: 10px;
+        width: 450px;
+        height: 65px;     
+        font-size: 1.3rem;
         color: var(--primary-light);
-        top: 0%;
-        height: 70px;
-        border-radius: 0% 0% 40% 40%;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 1.9rem;
-    }
-    #footer > p{
-        margin-top: 10px;
+        border-radius: 30% / 0% 0% 100% 100%; 
+        border: solid;
+        border-top-width: 0;
+        border-bottom-width: 15px;
+        border-color: #E97E2E;
+        opacity: 97%;
     }
     a {
-        font-size: 1.8rem;
-        position: absolute;
-        margin-right: -475px;
+        font-size: 2rem;
+        color: var(--primary-light);
     }
     .fa-github {
-        color: var(--primary-light);
-        margin-top: 16px;
-        transition: ease-in-out 0.4s;
-    }
+        transition: transform 0.3s ease-in-out;
+      }
+      
     .fa-github:hover {
-        margin-top: 10px;
-        transform: rotate(360deg);
-        font-size: 2.2rem;
+        transform: rotate(360deg) scale(1.2);
     }
+
     @media screen and (max-width: 2559px) {        
+        body {
+            padding-top: 100px;
+        }
         #screen {
             box-shadow: inset 1px 3px 15px var(--button-color);
             border-radius: 12px;            
@@ -204,7 +205,7 @@
         #shade {                    
             width: 375px;
             height: 585px;          
-            margin-top: 14px;
+            margin-top: -4px;
             border-radius: 50px 50px 45px 45px;
         }
         button {
@@ -215,25 +216,16 @@
             border-radius: 10px;
             font-size: 2.3rem;            
         }
-        #footer {            
-            height: 70px;
-            border-radius: 0% 0% 40% 40%;            
-            font-size: 1.4rem;
+        
+        .footer {            
+            width: 450px;
+            height: 65px;                        
+            gap: 10px;            
+            font-size: 1.3rem;            
         }
         a {
-            font-size: 1.8rem;
-            position: absolute;
-            margin-right: -357px;
-        }
-        .fa-github {
+            font-size: 2rem;
             color: var(--primary-light);
-            margin-top: 10px;
-            transition: ease-in-out 0.4s;
-        }
-        .fa-github:hover {
-            margin-top: 6px;
-            transform: rotate(360deg);
-            font-size: 2.2rem;
         }
     }
     
