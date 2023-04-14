@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to a Rock-Paper-Scissors game 👋</h1>
+<h1 align="center">Welcome to a Calculator project 👋</h1>
 
 ---
 
