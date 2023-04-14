@@ -1,231 +1,219 @@
-    @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
-    :root {
-        --primary-dark: #343434;
-        --primary-light: #D9DEDC;
-        --secondary-light: #EDEDED;
-        --button-color: #1E1E1E;
-        --screen-color: #666A5E;
-    }
-    * {
-        margin: 0;
-        padding: 0;
-        white-space: nowrap;
-        user-select: none;
-    }
-    body {        
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 600px;        
-        background: radial-gradient(
-            circle,
-            #99D9EA 0%,
-            #5488D1 80%
-        );        
-        padding-top: 200px;
-        padding-bottom: 30px;        
-    }
-    body::-webkit-scrollbar {
-        width: 4px;
-    }
-     
-    body::-webkit-scrollbar-track {
-        background-color: #e4e4e4;
-    }
-     
-    body::-webkit-scrollbar-thumb {
-        background-color: #d4aa70;
-    }
-    #calculator {
-        width: 700px;
-        height: 1130px;
-        border-radius: 90px 90px 60px 60px;
-        opacity: 95%;    
-        background:
-            radial-gradient(
-                var(--primary-dark) 50%,
-                transparent 100%
-            ),
-            url(https://grainy-gradients.vercel.app/noise.svg);
-    }
-    #shade {        
-        position: absolute;
-        z-index: -1;
-        width: 750px;
-        height: 1170px;
-        top: auto;
-        /* margin-top: 8000px; */
-        border-radius: 100px 100px 90px 90px;
-        background:
-            linear-gradient(
-                180deg,
-                #615E60,
-                #615E60 5%,
-                #423C40 12%,
-                #423C40 60%,
-                #302F30 100%
-            );
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+:root {
+  --primary-dark: #343434;
+  --primary-light: #d9dedc;
+  --secondary-light: #ededed;
+  --button-color: #1e1e1e;
+  --screen-color: #666a5e;
+}
+* {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+  background: radial-gradient(circle, #99d9ea 0%, #5488d1 80%);
+  padding-top: 200px;
+  padding-bottom: 30px;
+  -webkit-overflow-scrolling: auto;
+}
+body::-webkit-scrollbar {
+  width: 4px;
+}
 
-    }
-    #screen {
-        box-shadow: inset 1px 3px 15px var(--button-color);
-        border-radius: 12px;
-        height: 13%;
-        width: 82%;
-        margin: auto;
-        margin-top: 10.8%;
-        background-color: var(--screen-color);
-        background: radial-gradient(
-            circle,
-            var(--screen-color) 30%,
-            #595B50 90%
-        );
-        border: solid #3B3B3B;
-        border-width: 8px 18px 12px 18px;  
-        display: flex;
-        justify-content:center;
-        align-items:flex-end;
-        flex-direction: column;
-        border-top-color: #303030;
-        overflow: hidden;
-    }
-    #screen > p {
-        padding-right: 2%;
-        padding-left: 2%;
-        font-family: 'Orbitron', sans-serif;
-        color: #161A1E;
-    }
-    #screen > #expression {
-        font-size: 1.9rem;
-        margin-top: 4px;
-        height: 10%;
-        width: fit-content;
-    }
-    #screen > #output {
-        margin-top: 4px;
-        font-size: 5.8rem;
-        height: 80%;
-        letter-spacing: -1px;
-        width: max-content;        
-        overflow: hidden;
-    }
-    #buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        height: 58%; 
-        margin: 9% 8% 0;
-        gap: 3%; 
-        opacity: 90%;
-    }    
-    button {
-        box-shadow: 0px 12px 10px rgba(41, 41, 41, 1);
-        cursor: pointer;
-        border: solid #0F0F0F;
-        border-width: 2px 6px 13px 6px;
-        outline: none;
-        background: radial-gradient(
-            circle,
-            #303030 20%,
-            var(--button-color) 65%
-        );
-        border-radius: 10px;
-        font-size: 5rem;
-        color: var(--primary-light);
-    }
-    #initializer {
-        background: radial-gradient(
-            circle,
-            #C96D28 20%,
-            #D4732A 65%
-        );
-        border: solid #91521E;
-        border-width: 1px 3px 6.5px 3px;
-    }
-    #plus {
-        grid-column: 4/5;
-        grid-row:  4/6;
-    }
-    .footer {
-        background-color: var(--button-color);
-        position: absolute;
-        top: 0;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: -10px;
-        gap: 10px;
-        width: 450px;
-        height: 65px;     
-        font-size: 1.3rem;
-        color: var(--primary-light);
-        border-radius: 30% / 0% 0% 100% 100%; 
-        border: solid;
-        border-top-width: 0;
-        border-bottom-width: 15px;
-        border-color: #E97E2E;
-        opacity: 97%;
-    }
-    a {
-        font-size: 2rem;
-        color: var(--primary-light);
-    }
-    .fa-github {
-        transition: transform 0.3s ease-in-out;
-      }
-      
-    .fa-github:hover {
-        transform: rotate(360deg) scale(1.2);
-    }
+body::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+}
 
-    @media screen and (max-width: 2559px) {        
-        body {
-            padding-top: 100px;
-        }
-        #screen {
-            box-shadow: inset 1px 3px 15px var(--button-color);
-            border-radius: 12px;            
-            border-width: 8px 18px 12px 18px;              
-        }
-        #screen > #expression {
-            font-size: 0.95rem;
-            margin-top: 4px;        
-        }
-        #screen > #output {
-            margin-top: 4px;
-            font-size: 2.9rem;
-            height: 80%;
-            letter-spacing: -1px;
-        }
-        #calculator {
-            width: 350px;
-            height: 565px;
-            border-radius: 45px 45px 30px 30px;             
-        }
-        #shade {                    
-            width: 375px;
-            height: 585px;          
-            margin-top: -4px;
-            border-radius: 50px 50px 45px 45px;
-        }
-        button {
-            box-shadow: 0px 6px 5px rgba(41, 41, 41, 1);
-            cursor: pointer;
-            border: solid #0F0F0F;
-            border-width: 1px 3px 6.5px 3px;                        
-            border-radius: 10px;
-            font-size: 2.3rem;            
-        }
-        
-        .footer {            
-            width: 450px;
-            height: 65px;                        
-            gap: 10px;            
-            font-size: 1.3rem;            
-        }
-        a {
-            font-size: 2rem;
-            color: var(--primary-light);
-        }
-    }
-    
+body::-webkit-scrollbar-thumb {
+  background-color: #d4aa70;
+}
+#calculator {
+  width: 700px;
+  height: 1130px;
+  border-radius: 90px 90px 60px 60px;
+  opacity: 95%;
+  background: radial-gradient(var(--primary-dark) 50%, transparent 100%),
+    url(https://grainy-gradients.vercel.app/noise.svg);
+}
+#shade {
+  position: absolute;
+  z-index: -1;
+  width: 750px;
+  height: 1170px;
+  top: auto;
+  /* margin-top: 8000px; */
+  border-radius: 100px 100px 90px 90px;
+  background: linear-gradient(
+    180deg,
+    #615e60,
+    #615e60 5%,
+    #423c40 12%,
+    #423c40 60%,
+    #302f30 100%
+  );
+}
+#screen {
+  box-shadow: inset 1px 3px 15px var(--button-color);
+  border-radius: 12px;
+  height: 13%;
+  width: 82%;
+  margin: auto;
+  margin-top: 10.8%;
+  background-color: var(--screen-color);
+  background: radial-gradient(circle, var(--screen-color) 30%, #595b50 90%);
+  border: solid #3b3b3b;
+  border-width: 8px 18px 12px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  border-top-color: #303030;
+  overflow: hidden;
+}
+#screen > p {
+  padding-right: 2%;
+  padding-left: 2%;
+  font-family: "Orbitron", sans-serif;
+  color: #161a1e;
+}
+#screen > #expression {
+  font-size: 1.9rem;
+  margin-top: 4px;
+  height: 10%;
+  width: fit-content;
+}
+#screen > #output {
+  margin-top: 4px;
+  font-size: 5.8rem;
+  height: 80%;
+  letter-spacing: -1px;
+  width: max-content;
+  overflow: hidden;
+}
+#buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 58%;
+  margin: 9% 8% 0;
+  gap: 3%;
+  opacity: 90%;
+}
+button {
+  box-shadow: 0px 12px 10px rgba(41, 41, 41, 1);
+  cursor: pointer;
+  border: solid #0f0f0f;
+  border-width: 2px 6px 13px 6px;
+  outline: none;
+  background: radial-gradient(circle, #303030 20%, var(--button-color) 65%);
+  border-radius: 10px;
+  font-size: 5rem;
+  color: var(--primary-light);
+  -webkit-tap-highlight-color: transparent;
+}
+#initializer {
+  background: radial-gradient(circle, #c96d28 20%, #d4732a 65%);
+  border: solid #91521e;
+  border-width: 1px 3px 6.5px 3px;
+}
+#plus {
+  grid-column: 4/5;
+  grid-row: 4/6;
+}
+.footer {
+  background-color: var(--button-color);
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+  gap: 10px;
+  width: 450px;
+  height: 65px;
+  font-size: 1.3rem;
+  color: var(--primary-light);
+  border-radius: 30% / 0% 0% 100% 100%;
+  border: solid;
+  border-top-width: 0;
+  border-bottom-width: 15px;
+  border-color: #e97e2e;
+  opacity: 97%;
+}
+footer:hover i {
+  animation: myfirst 1.2s 1;
+}
+@keyframes myfirst {
+  0% {
+    color: #e97e2e;
+  }
+  100% {
+    color: var(--primary-light);
+  }
+}
+a {
+  font-size: 2rem;
+  color: var(--primary-light);
+}
+.fa-github {
+  transition: transform 0.3s ease-in-out;
+}
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+@media screen and (max-width: 2559px) {
+  body {
+    padding-top: 100px;
+  }
+  #screen {
+    box-shadow: inset 1px 3px 15px var(--button-color);
+    border-radius: 12px;
+    border-width: 8px 18px 12px 18px;
+  }
+  #screen > #expression {
+    font-size: 0.95rem;
+    margin-top: 4px;
+  }
+  #screen > #output {
+    margin-top: 4px;
+    font-size: 2.9rem;
+    height: 80%;
+    letter-spacing: -1px;
+  }
+  #calculator {
+    width: 350px;
+    height: 565px;
+    border-radius: 45px 45px 30px 30px;
+  }
+  #shade {
+    width: 375px;
+    height: 585px;
+    margin-top: -4px;
+    border-radius: 50px 50px 45px 45px;
+  }
+  button {
+    box-shadow: 0px 6px 5px rgba(41, 41, 41, 1);
+    cursor: pointer;
+    border: solid #0f0f0f;
+    border-width: 1px 3px 6.5px 3px;
+    border-radius: 10px;
+    font-size: 2.3rem;
+  }
+
+  .footer {
+    width: 450px;
+    height: 65px;
+    gap: 10px;
+    font-size: 1.3rem;
+  }
+  a {
+    font-size: 2rem;
+    color: var(--primary-light);
+  }
+}
